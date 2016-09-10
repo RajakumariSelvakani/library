@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    	<head>
+    		<meta charset="UTF-8">
+    		<title>library</title>
+    		<script type="text/javascript">
+var picPaths=["books.jpg","top.jpg","tabbook.jpg","readme.png","books.jpg","manshelf.jpg","bookie.jpg","readbook.jpg","dollbook.jpg","roundshelf.jpg","smileyread.png"];
+var curPic=-1;
+var imgO=new Array();
+for(i=0;i<picPaths.length;i++)
+{
+imgO[i]=new Image();
+imgO[i].src=picPaths[i];
+}
+function swapImage(){
+curPic=(++curPic > picPaths.length-1)? 0: curPic;
+imgCont.src=imgO[curPic].src;
+setTimeout(swapImage,2000);
+}
+window.onload=function(){
+imgCont=document.getElementById('imgBanner');
+swapImage();
+}
+</script>
+    	</head>
+    	<style>
+#e1{
+border:10px solid black;
+padding:45px;
+background:yellow;
+background:url("top1.jpg");
+background-repeat:repeat;
+background-position:right;
+}
+</style>
+<body bgcolor=white>
+<div id="e1">
+    <h2>IMPERIAL LIBRARY PRESERVATION MANNER</h2>
+</div>
+<font color="black">
+<form>
+<h6>HOME<img id="myimage" onclick="window.location.href='index.html'" src="home.png" width=30 height=30>
+
+ REGISTER<img id="myimage" onclick="window.location.href='register.html'" src="register.png" width=30 height=30>
+
+LOGIN<img id="myimage" onclick="window.location.href='login.html'" src="login.png" width=30 height=30>
+
+ BOOK SEARCH<img id="myimage" onclick="window.location.href='search.html'" src="search.png" width=30 height=30>
+<br>
+<br>
+
+<br>
+
+<div>
+<img id="imgBanner" src="books.jpg" width="400" height=100/>
+<fieldset style="width:30%">
+<legend>
+LIBRARIAN
+</legend>
+Email ID<input type="text" name="user" size=""><br>
+Password<input type="password" name="pass" size=""><br>
+<input id="button" type="submit" name="submit" value="Log-In"></fieldset></h6>
+</form>
+</div>
+</font>
+</html>
